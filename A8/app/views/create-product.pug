@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+  head
+    title Create Product
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  body(background="https://images6.alphacoders.com/366/366326.jpg")
+    .container
+      h2 Create product page
+      form.product-form(action='http://localhost:3000/users/create', method='post')
+          .input-block
+            p Product Name:
+            input.input-box(type='text', name='Name', placeholder='Name', autofocus='', required='')
+          .input-block
+            p Price:
+            input.input-box(type='number', name='price', placeholder='price', required='')
+          .input-block
+            p Discount:
+            input.input-box(type='number', name='discount', placeholder='discount')
+          .input-block
+            p Description:
+            textarea.input-box(name='description', placeholder='description', rows='2', cols='80', required='')
+          .input-block
+            p Model:
+            input.input-box(type='text', name='model', placeholder='Model', required='')
+          .input-block
+            p Brand Name:
+            input.input-box(type='text', name='brandName', placeholder='Brand Name', required='')
+          br
+          button(type='submit', name='submit') Submit
+          br
+
+        
+    

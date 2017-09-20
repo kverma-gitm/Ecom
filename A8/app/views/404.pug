@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title 404 Error
+  // /head
+  body
+    .container.text-center
+      .logo-404
+      .content-404
+        img.img-responsive(src='http://www.shoemoney.com/wp-content/uploads/2014/06/404-error.png', alt='')
+        h2
+          a(href='http://localhost:3000/users') Go Back Home
+        h2 message: #{message}
+        h2 Error: #{error}
+

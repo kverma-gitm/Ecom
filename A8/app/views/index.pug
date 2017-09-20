@@ -1,0 +1,90 @@
+doctype html
+html
+  style.
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+    }
+    /* Set a style for all buttons */
+    button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 10%;
+    cursor: pointer;
+    width: 20%;
+    float:center;
+    }
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+    float:right;
+    }
+    /* Float cancel and signup buttons and add an equal width */
+    .cancelbtn,.signupbtn {
+    width: 50%;
+    margin-left:6%;
+    }
+    /* Add padding to container elements */
+    .container {
+    padding: 16px;
+    width: 30%;
+    text-align:center;
+    margin-left:30%;
+    }
+    /* Clear floats */
+    .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+    /* Change styles for cancel button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+    width: 100%;
+    }
+    }
+  body(background='https://4.bp.blogspot.com/-W6Xv2nU74bE/VexIuHo8yQI/AAAAAAABz_0/NuJLa5rtZco/s1920/Gadgets_on_my_Desktop_uhd.jpg')
+    .fb-profile-text
+      button.button.button2
+        a(href='http://localhost:3000/users/login/screen') Login
+        br
+      button.button.button2
+        a(href='http://localhost:3000/users/products') Products
+        br
+
+      
+      form(action='http://localhost:3000/users/', method='post')
+        .container
+          label
+            b First Name
+          input(type='text', placeholder='Enter First Name', name='firstName', required='')
+          label
+            b Last Name
+          input(type='text', placeholder='Enter Last Name', name='lastName', required='')
+          label
+            b Email
+          input(type='text', placeholder='Enter Email', name='email', required='')
+          label
+            b Country
+          input(type='text', placeholder='Enter Country', name='country', required='')
+          label
+            b Password
+          input(type='password', placeholder='Enter Password', name='password', required='')
+          input(type='checkbox', checked='checked')
+          |  Remember me
+          p
+            | By creating an account you agree to our 
+            a(href='#') Terms & Privacy
+            | .
+          .clearfix
+            button.signupbtn(type='submit') Sign Up
+      // /container

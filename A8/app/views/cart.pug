@@ -1,0 +1,80 @@
+doctype html
+html(lang='en')
+  head
+    title Profile
+    style.
+      body
+      {
+      font-family: 'Open Sans', sans-serif;
+      }
+      .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      }
+      .button2:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+      }
+      .fb-profile img.fb-image-lg{
+      z-index: 0;
+      width: 100%;
+      margin-bottom: 10px;
+      }
+      .fb-image-profile
+      {
+      margin: -90px 10px 0px 50px;
+      z-index: 9;
+      width: 20%;
+      border-radius: 50%;
+      }
+      @media (max-width:768px)
+      {
+      .fb-profile-text>h1{
+      font-weight: 700;
+      font-size:16px;
+      }
+      .fb-image-profile
+      {
+      margin: -45px 10px 0px 25px;
+      z-index: 9;
+      width: 20%;
+      }
+      }
+  body(background="http://allswalls.com/images/light-water-eagles-fly-fly-away-photo-manipulation-colors-away-speedart-manipulation-skies-sea-wallpaper-1.jpg")
+    #container.col
+      link(href='http://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
+      button.button.button2
+        a(href='http://localhost:3000/users/dashboard/screen') Profile
+      .container
+            
+        .fb-profile
+          img.fb-image-lg()
+          img.fb-image-profile.thumbnail()
+          .fb-profile-text
+            - for (var x = 0; x < Olength; x++)
+              h2 Order Number : #{x+1}
+              h2 User : #{orderItems[x].userName}
+              h2 Order Name = #{orderItems[x].Name}
+              h2 Price = #{orderItems[x].price}
+              h2 Brand Name = #{orderItems[x].brandName}
+              h2 Description = #{orderItems[x].description}
+              h2 Model = #{orderItems[x].model}
+              button.button.button2
+                a(href='http://localhost:3000/users/cartdelete/'+orderItems[x].Name) Remove From Cart
+            
+              button.button.button2
+                a(href='http://localhost:3000/users/products') Go To Products
+            
+            
+        // /container
+            
+

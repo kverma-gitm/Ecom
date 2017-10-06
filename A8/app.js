@@ -8,42 +8,7 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 // path is used the get the path of our files on the computer
 var path = require('path');
-var passport  = require( 'passport' );
-var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-var GOOGLE_CLIENT_ID      = "691416009733-8k4b6eoqs8g630f25p4401r6v0pdlgo3.apps.googleusercontent.com"
-  , GOOGLE_CLIENT_SECRET  = "2T_I56we_ecCBum-aOtJbZu_";
-
-  passport.serializeUser(function(user, done) {
-  done(null, user);
-});
-
-  passport.deserializeUser(function(obj, done) {
-  done(null, obj);
-});
-
-//google login code
-passport.use(new GoogleStrategy({
-    clientID:     "691416009733-8k4b6eoqs8g630f25p4401r6v0pdlgo3.apps.googleusercontent.com",
-    clientSecret: "2T_I56we_ecCBum-aOtJbZu_",
-    callbackURL: "http://localhost:3000/auth/google/callback",
-    passReqToCallback   : true
-  },
-  function(request, accessToken, refreshToken, profile, done) {
-    // asynchronous verification, for effect...
-    process.nextTick(function () {
-      
-      // To keep the example simple, the user's Google profile is returned to
-      // represent the logged-in user.  In a typical application, you would want
-      // to associate the Google account with a user record in your database,
-      // and return that user instead.
-      return done(null, profile);
-    });
-  }
-));
 
 
 app.use(logger('dev'));
@@ -169,16 +134,4 @@ app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });
 
-//google passport code
 
-app.get('/auth/google',
-  passport.authenticate('google', { scope: 
-    [ 'https://www.googleapis.com/auth/plus.login',
-    , 'https://www.googleapis.com/auth/plus.profile.emails.read' ] }
-));
- 
-app.get( '/auth/google/callback', 
-    passport.authenticate( 'google', { 
-        successRedirect: '/users/google/screen',
-        failureRedirect: '/auth/google/failure'
-}));
